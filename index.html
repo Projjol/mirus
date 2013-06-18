@@ -1,40 +1,163 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mirus by joshbeitler</title>
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mirus</h1>
+        <p>A small operating system written from scratch with the aim of world domination.</p>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+        <p class="view"><a href="https://github.com/joshbeitler/mirus">View the Project on GitHub <small>joshbeitler/mirus</small></a></p>
 
-        <!-- Add your site or application content here -->
-        <img src="https://raw.github.com/joshbeitler/mirus/master/docs/logo.png" width="25%" />
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <ul>
+          <li><a href="https://github.com/joshbeitler/mirus/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/joshbeitler/mirus/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/joshbeitler/mirus">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="mirus" class="anchor" href="#mirus"><span class="octicon octicon-link"></span></a>Mirus</h1>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+<p><a href="https://travis-ci.org/joshbeitler/mirus"><img src="https://travis-ci.org/joshbeitler/mirus.png?branch=master" alt="Build Status"></a></p>
+
+<p>Mirus is a hobby operating system designed to be a playground for new and interesting OS theories.  It is not based on any other exsisting standards, allowing for a great deal of freedom in the development of the concepts behind it.</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<p>Not much as of now...</p>
+
+<ul>
+<li>
+<code>printf</code> (so glorious...)</li>
+<li>GDT</li>
+<li>ISRs</li>
+<li>IDT</li>
+<li>memcpy and related</li>
+</ul><h2>
+<a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<p><img src="https://raw.github.com/joshbeitler/mirus/master/docs/resc/screens/mirus_console.png" width="100%"><img src="https://raw.github.com/joshbeitler/mirus/master/docs/resc/screens/mirus_colors.png" width="100%"></p>
+
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>Mirus will build fine on most Unix systems that have the dependencies installed, and possibly with Mingw/Cygwin (not tested).  Normal development takes place on Fedora 18.</p>
+
+<p>Once the dependencies are met, you can clone the repository with the following command:</p>
+
+<p><code>git clone https://github.com/joshbeitler/mirus.git</code></p>
+
+<p>And build with <code>make all</code>.  To generate a distribution package, perform <code>make dist</code>.</p>
+
+<p>Make will build, link, and generate an ISO image of Mirus using grub2.  This can be run in your favorite VM or on physical hardware.  You can run <code>make kvm</code> to run in QEMU.  Note that we currently only officially support QEMU and VirtualBox.</p>
+
+<h2>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<h3>
+<a name="kernel" class="anchor" href="#kernel"><span class="octicon octicon-link"></span></a>Kernel</h3>
+
+<p>To build the Mirus kernel, you will need <code>nasm</code>, <code>clang</code>, and <code>GNU ld</code>.  In order to build the ISO image, Mirus uses the <code>grub2-mkrescue</code> utility found in the grub2 utilities collection. (Which you probably have if your system uses GRUB2)</p>
+
+<h2>
+<a name="resources" class="anchor" href="#resources"><span class="octicon octicon-link"></span></a>Resources</h2>
+
+<h3>
+<a name="inspiration" class="anchor" href="#inspiration"><span class="octicon octicon-link"></span></a>Inspiration</h3>
+
+<p>These projects helped inspire Mirus's unique kernel architecture.</p>
+
+<ul>
+<li><a href="http://plan9.bell-labs.com/plan9/">Plan 9 from Bell Labs</a></li>
+<li><a href="http://www.eros-os.org/eros.html">EROS</a></li>
+<li><a href="http://www.minix3.org">MINIX3</a></li>
+</ul><h3>
+<a name="references" class="anchor" href="#references"><span class="octicon octicon-link"></span></a>References</h3>
+
+<p>These documents or sites helped me greatly in the development of Mirus.</p>
+
+<ul>
+<li><a href="http://osdev.org">OSDev</a></li>
+<li><a href="http://www.osdever.net/bkerndev/Docs/intro.htm">Bran's Kernel Development Series</a></li>
+<li><a href="http://code.google.com/p/jamesm-tutorials/">James M's Kernel Tutorials</a></li>
+</ul><h3>
+<a name="misc" class="anchor" href="#misc"><span class="octicon octicon-link"></span></a>Misc</h3>
+
+<p>Other helpful things to me.</p>
+
+<ul>
+<li>
+<a href="http://torauos.org">とあるOS</a> - Helped inspire me to work on Mirus.</li>
+<li>
+<a href="http://cosmos.codeplex.com">Cosmos</a> - Original stomping ground for my OS dev ventures.</li>
+<li>
+<a href="http://toastytech.com/guis/bob.html">Windows</a> - For sucking so much it caused me to want to see if I could do better...</li>
+</ul><h2>
+<a name="related-projects" class="anchor" href="#related-projects"><span class="octicon octicon-link"></span></a>Related Projects</h2>
+
+<p>These projects are directly related to Mirus.</p>
+
+<ul>
+<li>
+<a href="http://github.com/joshbeitler/mirloader">Mirloader</a> - Eventual bootloader for Mirus.</li>
+<li>
+<a href="http://github.com/joshbeitler/mirlabs">Mirlabs</a> - Testing grounds for a lot of Mirus' more...crazy features.</li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<h3>
+<a name="mirus-1" class="anchor" href="#mirus-1"><span class="octicon octicon-link"></span></a>Mirus</h3>
+
+<p>Mirus (and related userspace) is licensed under the MIT License, found below and in the License.md file.</p>
+
+<pre><code>The MIT License (MIT)
+
+Copyright (c) 2013 Joshua Beitler, Mirus contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
+
+<h3>
+<a name="additional-components" class="anchor" href="#additional-components"><span class="octicon octicon-link"></span></a>Additional Components</h3>
+
+<p>Licenses for other included components and software not covered by the MIT license can be found in the License.md file.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
 </html>
