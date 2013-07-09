@@ -1,145 +1,87 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Mirus Operating System</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                font-family: monospace;
+            }
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Mirus : A small operating system written from scratch with the aim of world domination." />
+            body {
+                background-color: black;
+                color: white;
+                max-width: 65%;
+                margin: 0 auto;
+                margin-top: 150px;
+                vertical-align: middle;
+            }
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+            pre {
+                margin-bottom: 50px;
+            }
 
-    <title>Mirus</title>
-  </head>
+            a:link {
+                color: green;
+            }
 
-  <body>
+            a:visited {
+                color: green;
+            }
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/joshbeitler/mirus">View on GitHub</a>
+            a:hover {
+                color: light-green;
+            }
 
-          <h1 id="project_title">Mirus</h1>
-          <h2 id="project_tagline">A small operating system written from scratch with the aim of world domination.</h2>
+            a:active {
+                color: light-green;
+            }
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/joshbeitler/mirus/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/joshbeitler/mirus/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+            div {
+                margin-bottom: 15px;
+            }
+        </style>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="mirus" class="anchor" href="#mirus"><span class="octicon octicon-link"></span></a>Mirus</h1>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+</script>
 
-<p>Mirus is a hobby operating system designed to be a playground for new and interesting OS theories.  It is not based on any other exsisting standards, allowing for a great deal of freedom in the development of the concepts behind it.</p>
+<script type="text/javascript" src="gfeedfetcher.js">
+/***********************************************
+* gAjax RSS Feeds Displayer- (c) Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+</script>
+    </head>
+    <body>
+        <pre>
+         @    @        Mirus
+        @@   @@        Open Source Operating System   
+       @@@  @@@        by @joshbeitler 
+      @@@@ @@@@       
+     @@@@ @@@@         <a href="https://github.com/joshbeitler/mirus">View on GitHub</a>
+    @@@@ @@@@          <a href="https://github.com/joshbeitler/mirus/zipball/develop">Download (zip)(unstable)</a>
+   @@@@ @@@@  @        <a href="https://github.com/joshbeitler/mirus/tarball/develop">Download (tar)(unstable)</a>
+  @@@@ @@@@  @@       
+ @@@@ @@@@  @@@        <a href="https://github.com/joshbeitler/mirus/zipball/master">Download (zip)(stable)</a>
+@@@@ @@@@  @@@@        <a href="https://github.com/joshbeitler/mirus/tarball/master">Download (tar)(stable)</a>
+        </pre>
+    Mirus is a hobby operating system designed for the x86-64 platform and world domination, and written in C++, a bit of Assembly, and using a bit of magic.  Please note that as we use Vim, and that this website used a very hackery feeling theme, we are much better the GNU - in both humer and in style.  Remember kids, class counts.<br /><br /><br /><br />
 
-<h2>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+    <b>commits (develop)</b><br/><br />
 
-<ul>
-<li>The basics (gdt, irq, isrs, kprintf)</li>
-</ul><h2>
-<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+<script type="text/javascript">
 
-<p>Mirus will build fine on most Unix systems that have the dependencies installed, and possibly with Mingw/Cygwin (not tested).  Normal development takes place on Fedora 18.</p>
+var socialfeed=new gfeedfetcher("example2", "example2class", "_new")
+socialfeed.addFeed("Commits", "https://github.com/joshbeitler/mirus/commits/develop.atom") //Specify "label" plus URL to RSS feed
+socialfeed.displayoptions("datetime snippet") //show the specified additional fields
+socialfeed.setentrycontainer("div") //Display each entry as a DIV
+socialfeed.filterfeed(6, "label") //Show 6 entries, sort by label
+socialfeed.init() //Always call this last
 
-<p>Once the dependencies are met, you can clone the repository with the following command:</p>
-
-<p><code>git clone https://github.com/joshbeitler/mirus.git</code></p>
-
-<p>And build with <code>make all</code>.  To generate a distribution package, perform <code>make dist</code>.</p>
-
-<p>Make will build, link, and generate an ISO image of Mirus using grub2.  This can be run in your favorite VM or on physical hardware.  You can run <code>make kvm</code> to run in QEMU.  Note that we currently only officially support QEMU and VirtualBox.</p>
-
-<h2>
-<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
-
-<h3>
-<a name="kernel" class="anchor" href="#kernel"><span class="octicon octicon-link"></span></a>Kernel</h3>
-
-<p>To build the Mirus kernel, you will need <code>nasm</code>, <code>clang</code>, and <code>GNU ld</code>.  In order to build the ISO image, Mirus uses the <code>grub2-mkrescue</code> utility found in the grub2 utilities collection. (Which you probably have if your system uses GRUB2)</p>
-
-<h2>
-<a name="resources" class="anchor" href="#resources"><span class="octicon octicon-link"></span></a>Resources</h2>
-
-<h3>
-<a name="inspiration" class="anchor" href="#inspiration"><span class="octicon octicon-link"></span></a>Inspiration</h3>
-
-<p>These projects helped inspire Mirus's unique kernel architecture.</p>
-
-<ul>
-<li><a href="http://plan9.bell-labs.com/plan9/">Plan 9 from Bell Labs</a></li>
-<li><a href="http://www.eros-os.org/eros.html">EROS</a></li>
-<li><a href="http://www.minix3.org">MINIX3</a></li>
-</ul><h3>
-<a name="references" class="anchor" href="#references"><span class="octicon octicon-link"></span></a>References</h3>
-
-<p>These documents or sites helped me greatly in the development of Mirus.</p>
-
-<ul>
-<li><a href="http://osdev.org">OSDev</a></li>
-<li><a href="http://www.osdever.net/bkerndev/Docs/intro.htm">Bran's Kernel Development Series</a></li>
-<li><a href="http://code.google.com/p/jamesm-tutorials/">James M's Kernel Tutorials</a></li>
-</ul><h3>
-<a name="misc" class="anchor" href="#misc"><span class="octicon octicon-link"></span></a>Misc</h3>
-
-<p>Other helpful things to me.</p>
-
-<ul>
-<li>
-<a href="http://torauos.org">とあるOS</a> - Helped inspire me to work on Mirus.</li>
-<li>
-<a href="http://cosmos.codeplex.com">Cosmos</a> - Original stomping ground for my OS dev ventures.</li>
-</ul><h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
-
-<h3>
-<a name="mirus-1" class="anchor" href="#mirus-1"><span class="octicon octicon-link"></span></a>Mirus</h3>
-
-<p>Mirus (and related userspace) is licensed under the MIT License, found below and in the License.md file.</p>
-
-<pre><code>The MIT License (MIT)
-
-Copyright (c) 2013 Joshua Beitler, Mirus contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-</code></pre>
-
-<h3>
-<a name="additional-components" class="anchor" href="#additional-components"><span class="octicon octicon-link"></span></a>Additional Components</h3>
-
-<p>Licenses for other included components and software not covered by the MIT license can be found in the License.md file.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Mirus maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+</script>
     
-
-  </body>
+    
+    </body>
 </html>
+        
