@@ -1,87 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Mirus Operating System</title>
-        <style type="text/css">
-            * {
-                margin: 0;
-                font-family: monospace;
-            }
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mirus by joshbeitler</title>
 
-            body {
-                background-color: black;
-                color: white;
-                max-width: 65%;
-                margin: 0 auto;
-                margin-top: 150px;
-                vertical-align: middle;
-            }
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Mirus</h1>
+        <p class="header">A small operating system written from scratch with the aim of world domination.</p>
 
-            pre {
-                margin-bottom: 50px;
-            }
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/joshbeitler/mirus/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/joshbeitler/mirus/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/joshbeitler/mirus">View On GitHub</a></li>
+        </ul>
 
-            a:link {
-                color: green;
-            }
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/joshbeitler">joshbeitler</a></p>
 
-            a:visited {
-                color: green;
-            }
 
-            a:hover {
-                color: light-green;
-            }
+      </header>
+      <section>
+        <p>Mirus is a hobby operating system designed to be a playground for new and interesting OS theories.  It is not based on any other exsisting standards, allowing for a great deal of freedom in the development of the concepts behind it.</p>
 
-            a:active {
-                color: light-green;
-            }
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
 
-            div {
-                margin-bottom: 15px;
-            }
-        </style>
+<h3>
+<a name="note-on-source-structure" class="anchor" href="#note-on-source-structure"><span class="octicon octicon-link"></span></a>Note on Source Structure</h3>
 
-<script type="text/javascript" src="http://www.google.com/jsapi">
-</script>
+<p>You may notice that <code>readme.markdown</code> and <code>license.txt</code> are symbolic links to accordingly named files in the <code>support</code> directory.  In the Mirus world, to keep things clean, files such as READMEs, CONTRIBUTING, Licenses, and related files are moved into a directory called <code>support</code>.  You will notice this trend in projects related to Mirus (mirloader, mkdb, mircore, etc.), as well as a lot of applications that run on Mirus.  To not cause any confusion, we have symlinked the README and LICENSE files to the root directory.  Please note that this is not always the case, and also that the symlinks may cause troubles in web-based source viewers that do not support symbolic links.</p>
 
-<script type="text/javascript" src="gfeedfetcher.js">
-/***********************************************
-* gAjax RSS Feeds Displayer- (c) Dynamic Drive (www.dynamicdrive.com)
-* This notice MUST stay intact for legal use
-* Visit http://www.dynamicdrive.com/ for full source code
-***********************************************/
-</script>
-    </head>
-    <body>
-        <pre>
-         @    @        Mirus
-        @@   @@        Open Source Operating System   
-       @@@  @@@        by @joshbeitler 
-      @@@@ @@@@       
-     @@@@ @@@@         <a href="https://github.com/joshbeitler/mirus">View on GitHub</a>
-    @@@@ @@@@          <a href="https://github.com/joshbeitler/mirus/zipball/develop">Download (zip)(unstable)</a>
-   @@@@ @@@@  @        <a href="https://github.com/joshbeitler/mirus/tarball/develop">Download (tar)(unstable)</a>
-  @@@@ @@@@  @@       
- @@@@ @@@@  @@@        <a href="https://github.com/joshbeitler/mirus/zipball/master">Download (zip)(stable)</a>
-@@@@ @@@@  @@@@        <a href="https://github.com/joshbeitler/mirus/tarball/master">Download (tar)(stable)</a>
-        </pre>
-    Mirus is a hobby operating system designed for the x86-64 platform and world domination, and written in C++, a bit of Assembly, and using a bit of magic.  Please note that as we use Vim, and that this website used a very hackery feeling theme, we are much better the GNU - in both humer and in style.  Remember kids, class counts.<br /><br /><br /><br />
+<h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
 
-    <b>commits (develop)</b><br/><br />
+<p>Mirus depends on <code>clang</code>, <code>grub2</code>, <code>xorriso</code>, <code>ld</code>, and <code>nasm</code> to build the kernel.</p>
 
-<script type="text/javascript">
+<h3>
+<a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h3>
 
-var socialfeed=new gfeedfetcher("example2", "example2class", "_new")
-socialfeed.addFeed("Commits", "https://github.com/joshbeitler/mirus/commits/develop.atom") //Specify "label" plus URL to RSS feed
-socialfeed.displayoptions("datetime snippet") //show the specified additional fields
-socialfeed.setentrycontainer("div") //Display each entry as a DIV
-socialfeed.filterfeed(6, "label") //Show 6 entries, sort by label
-socialfeed.init() //Always call this last
+<p>First of all, make sure that you have the most up-to-date source, via <code>git rebase</code>.  To  perform a build, simply run <code>make</code> on the source root.  The <code>mirus.iso</code> file is what you are looking for.  Additional makefile targets can be found in the <code>support/BUILDING</code> file.  To learn more about the source and how the directories are formatted, look in <code>support/source-overview</code>.</p>
 
-</script>
-    
-    
-    </body>
+<h3>
+<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h3>
+
+<p>You can burn the ISO image to a disk (CD/DVD) and run it on actual hardware, or in a virtual machine.  We mainly support QEMU and VirtualBox, though most (if not all) capable virtual machines can run it.  We try to keep Mirus compatable with most up-to-date modern hardware.</p>
+
+<h3>
+<a name="debugging" class="anchor" href="#debugging"><span class="octicon octicon-link"></span></a>Debugging</h3>
+
+<p>Mirus has mouthwatering deugging capabilities to make the life of kernel developers easier.  If you build Mirus with the <code>make debug</code> target, the kernel image will be compiled with additional debugging symbols and information for <code>mkdb</code>, the Mirus kernel debugger.  You can debug Mirus with <code>mkdb</code> and <code>gdb</code>. In addition Mirus uses serial ports to provide on-the-fly debugging information (two way) when compiled with the <code>debug</code> flag.  You can view these logs with <code>tail -f</code> or a similar utility.  More information on debugging can be found on the wiki or in the <code>docs</code> directory.</p>
+
+<h3>
+<a name="kernel-panics" class="anchor" href="#kernel-panics"><span class="octicon octicon-link"></span></a>Kernel Panics</h3>
+
+<p>If you get a kernel panic, please post a new issue on the <a href="https://github.com/joshbeitler/mirus/issues">issue tracker</a> with the error code, and preferably a stack trace/register dump.</p>
+
+<h2>
+<a name="getting-help" class="anchor" href="#getting-help"><span class="octicon octicon-link"></span></a>Getting Help</h2>
+
+<p>Something broke?  No problem, shit happens.</p>
+
+<h3>
+<a name="irc" class="anchor" href="#irc"><span class="octicon octicon-link"></span></a>IRC</h3>
+
+<p>You can hook up with us on IRC on <code>#mirus</code> on <code>irc.freenode.net</code>.</p>
+
+<h3>
+<a name="twitter" class="anchor" href="#twitter"><span class="octicon octicon-link"></span></a>Twitter</h3>
+
+<p><a href="http://twitter.com/joshbeitler">@joshbeitler</a> on Twitter.</p>
+
+<h3>
+<a name="reporting-issues" class="anchor" href="#reporting-issues"><span class="octicon octicon-link"></span></a>Reporting Issues</h3>
+
+<p>If you happen upon a bug, want a feature, or need even <em>more</em> help, please drop us a line on the Mirus <a href="https://github.com/joshbeitler/mirus/issues">issue tracker</a>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<h3>
+<a name="mirus" class="anchor" href="#mirus"><span class="octicon octicon-link"></span></a>Mirus</h3>
+
+<p>Mirus (and related userspace) is licensed under the MIT License, found below and in the License.md file.</p>
+
+<pre><code>The MIT License (MIT)
+
+Copyright (c) 2013 Joshua Beitler, Mirus contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
+
+<h3>
+<a name="additional-components" class="anchor" href="#additional-components"><span class="octicon octicon-link"></span></a>Additional Components</h3>
+
+<p>Licenses for other included components and software not covered by the MIT license can be found in the License.md file.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
 </html>
-        
