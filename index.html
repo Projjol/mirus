@@ -1,122 +1,86 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Mirus by joshbeitler</title>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mirus | Open Source Operating System</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Mirus</h1>
-        <p>A small operating system written from scratch with the aim of world domination.</p>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <p class="view"><a href="https://github.com/joshbeitler/mirus">View the Project on GitHub <small>joshbeitler/mirus</small></a></p>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
+        <div id="mainhead">
+            <div class="wrap">
+                <span class="title">Mirus</span>
 
-        <ul>
-          <li><a href="https://github.com/joshbeitler/mirus/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/joshbeitler/mirus/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/joshbeitler/mirus">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <p>Mirus is a hobby operating system designed to be a playground for new and interesting OS theories.  It is not based on any other exsisting standards, allowing for a great deal of freedom in the development of the concepts behind it.</p>
+                <nav id="mainnav">
+                    <ul>
+                        <li class="current"><a href="#">home</a></li>
+                        <li><a href="#">learn</a></li>
+                        <li><a href="#">developer</a></li>
+                        <li><a href="#">documentation</a></li>
+                        <li><a href="#" class="icon-download-alt download"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 
-<h2>
-<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+<!--         <div id="masthead">
+            <div class="wrap">
+                derp
+            </div>
+        </div> -->
 
-<h3>
-<a name="note-on-source-structure" class="anchor" href="#note-on-source-structure"><span class="octicon octicon-link"></span></a>Note on Source Structure</h3>
+        <div class="masthead">
+        <div class="wrap">
+            <img src="./img/imac.png" class="center" />
+            <span class="h1">Mirus is awesome</span>
+            <span class="h2">Apple is not</span>
+        </div>
+        </div>
 
-<p>You may notice that <code>readme.markdown</code> and <code>license.txt</code> are symbolic links to accordingly named files in the <code>support</code> directory.  In the Mirus world, to keep things clean, files such as READMEs, CONTRIBUTING, Licenses, and related files are moved into a directory called <code>support</code>.  You will notice this trend in projects related to Mirus (mirloader, mkdb, mircore, etc.), as well as a lot of applications that run on Mirus.  To not cause any confusion, we have symlinked the README and LICENSE files to the root directory.  Please note that this is not always the case, and also that the symlinks may cause troubles in web-based source viewers that do not support symbolic links.</p>
+        <div id="content">
+            <div class="wrap">
+                <h1>Mirus</h1>
+                <p>
+                    Mirus is a hobby operating system designed to be a playground for new and interesting OS theories. It is not based on any other exsisting standards, allowing for a great deal of freedom in the development of the concepts behind it.
+                </p>
 
-<h3>
-<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+                <h2>Features</h2>
+                <p>
+                    *features here*
+                </p>
 
-<p>Mirus depends on <code>clang</code>, <code>grub2</code>, <code>xorriso</code>, <code>ld</code>, and <code>nasm</code> to build the kernel.</p>
+                <h2>Media</h2>
+                <p>
+                    *media here*
+                </p>
+            </div>
+        </div>
 
-<h3>
-<a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h3>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
 
-<p>First of all, make sure that you have the most up-to-date source, via <code>git rebase</code>.  To  perform a build, simply run <code>make</code> on the source root.  The <code>mirus.iso</code> file is what you are looking for.  Additional makefile targets can be found in the <code>support/BUILDING</code> file.  To learn more about the source and how the directories are formatted, look in <code>support/source-overview</code>.</p>
-
-<h3>
-<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h3>
-
-<p>You can burn the ISO image to a disk (CD/DVD) and run it on actual hardware, or in a virtual machine.  We mainly support QEMU and VirtualBox, though most (if not all) capable virtual machines can run it.  We try to keep Mirus compatable with most up-to-date modern hardware.</p>
-
-<h3>
-<a name="debugging" class="anchor" href="#debugging"><span class="octicon octicon-link"></span></a>Debugging</h3>
-
-<p>Mirus has mouthwatering deugging capabilities to make the life of kernel developers easier.  If you build Mirus with the <code>make debug</code> target, the kernel image will be compiled with additional debugging symbols and information for <code>mkdb</code>, the Mirus kernel debugger.  You can debug Mirus with <code>mkdb</code> and <code>gdb</code>. In addition Mirus uses serial ports to provide on-the-fly debugging information (two way) when compiled with the <code>debug</code> flag.  You can view these logs with <code>tail -f</code> or a similar utility.  More information on debugging can be found on the wiki or in the <code>docs</code> directory.</p>
-
-<h3>
-<a name="kernel-panics" class="anchor" href="#kernel-panics"><span class="octicon octicon-link"></span></a>Kernel Panics</h3>
-
-<p>If you get a kernel panic, please post a new issue on the <a href="https://github.com/joshbeitler/mirus/issues">issue tracker</a> with the error code, and preferably a stack trace/register dump.</p>
-
-<h2>
-<a name="getting-help" class="anchor" href="#getting-help"><span class="octicon octicon-link"></span></a>Getting Help</h2>
-
-<p>Something broke?  No problem, shit happens.</p>
-
-<h3>
-<a name="irc" class="anchor" href="#irc"><span class="octicon octicon-link"></span></a>IRC</h3>
-
-<p>You can hook up with us on IRC on <code>#mirus</code> on <code>irc.freenode.net</code>.</p>
-
-<h3>
-<a name="twitter" class="anchor" href="#twitter"><span class="octicon octicon-link"></span></a>Twitter</h3>
-
-<p><a href="http://twitter.com/joshbeitler">@joshbeitler</a> on Twitter.</p>
-
-<h3>
-<a name="reporting-issues" class="anchor" href="#reporting-issues"><span class="octicon octicon-link"></span></a>Reporting Issues</h3>
-
-<p>If you happen upon a bug, want a feature, or need even <em>more</em> help, please drop us a line on the Mirus <a href="https://github.com/joshbeitler/mirus/issues">issue tracker</a>.</p>
-
-<h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
-
-<h3>
-<a name="mirus" class="anchor" href="#mirus"><span class="octicon octicon-link"></span></a>Mirus</h3>
-
-<p>Mirus (and related userspace) is licensed under the Apache License, version 2, which can be found below and in the License.md file.</p>
-
-<pre><code>Copyright 2013 Mirus Project
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-</code></pre>
-
-<h3>
-<a name="additional-components" class="anchor" href="#additional-components"><span class="octicon octicon-link"></span></a>Additional Components</h3>
-
-<p>Licenses for other included components and software not covered by the Apache license can be found in the License.md file.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script> -->
+    </body>
 </html>
