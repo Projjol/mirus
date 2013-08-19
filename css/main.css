@@ -264,7 +264,7 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0
 #content {
     font-family: 'Open Sans', sans-serif;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
 }
 
 .center {
@@ -273,8 +273,80 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0
     display: block;
 }
 
+.fade {
+    opacity: 0.4;
 
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
 
+.fade:hover {
+    opacity: 1;
+}
+
+footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #155272;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.featurebox {
+    background-color: #155272;
+    border-radius: 2px;
+    padding: 15px;
+    color: #fff;
+    height: 200px;
+    width: 200px;
+
+    -webkit-box-shadow: inset 0px 1px 2px -1px #000;
+    box-shadow: inset 0px 1px 2px -1px #000;
+
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+
+    opacity: 0.5;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.featurebox:hover {
+    opacity: 1;
+}
+
+.featurebox h1 {
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.featurebox h2 {
+    margin: 0;
+    padding: 0;
+    font-size: larger;
+    font-style: italic;
+}
 
 
 
