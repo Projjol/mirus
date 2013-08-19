@@ -359,6 +359,12 @@ background: linear-gradient(to bottom, #27282b 0%,#000000 100%);
 color: #fff;
 padding-bottom: 15px;
 padding-top: 15px;
+margin-top: 30px;
+}
+
+.dark h2 {
+    margin: 0;
+    padding: 0;
 }
 
 
