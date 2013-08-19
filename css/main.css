@@ -36,12 +36,12 @@ body {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #103E57;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #103E57;
     text-shadow: none;
 }
 
@@ -99,6 +99,23 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.none {
+    color: #fff;
+    text-decoration: none;
+
+    -webkit-transition: opacity .2s ease;
+    -moz-transition: opacity .2s ease;
+    -ms-transition: opacity .2s ease;
+    -o-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+
+    opacity: 1.0;
+}
+
+.none:hover {
+    /*opacity: 0.75;*/
+}
+
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-size: 250%;
@@ -117,7 +134,7 @@ h2 {
 }
 
 #mainhead {
-    background-color: #2690c7;
+    background-color: #155272;
     padding-top: 25px;
     padding-bottom: 25px;
     font-family: 'yellowtailregular';
@@ -153,7 +170,7 @@ h2 {
     margin-right: 7px;
     vertical-align: middle;
 
-    opacity: 0.5;
+    opacity: 0.65;
 
     -webkit-transition: opacity .5s ease;
     -moz-transition: opacity .5s ease;
@@ -176,12 +193,15 @@ h2 {
 
 #mainnav .download {
     border-radius: 2px;
-    background-color: #155272;
+    background-color: #103E57;
     padding: 10px;
     height: 32px;
     width: 32px;
     text-align: center;
     line-height: 32px;
+    opacity: 1;
+    -webkit-box-shadow: inset 0px 1px 2px -1px #000;
+box-shadow: inset 0px 1px 2px -1px #000;
 }
 
 #mainnav a {
@@ -191,7 +211,7 @@ h2 {
 
 .masthead {
     z-index: 1;
-    background-image: url("../img/bg.png");
+    /*background-image: url("../img/bg.png");*/
     background-repeat: repeat;
 }
 
