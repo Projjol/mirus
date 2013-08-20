@@ -401,8 +401,8 @@ margin-top: 30px;
     box-shadow: inset 0px 1px 2px -1px #000;
 }
 
-.masthead_cap .button1 a {
-    opacity: 0.5;
+.masthead_cap .button1 {
+    opacity: 1;
 
     -webkit-transition: opacity .5s ease;
     -moz-transition: opacity .5s ease;
@@ -411,8 +411,8 @@ margin-top: 30px;
     transition: opacity .5s ease;
 }
 
-.masthead_cap .button1 a:hover {
-    opacity: 1;
+.masthead_cap .button1:hover {
+    opacity: 0.75;
 }
 
 .masthead_cap {
