@@ -226,11 +226,11 @@ background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 
 background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 9%,rgba(255,255,255,1) 100%); /* W3C */
 }
 
-.h1 {
+.masthead_cap .h1 {
     position: absolute;
-    bottom: -25px;
+    bottom: 150px;
 
-    background-color: #155272;
+    background-color: #103E57;
     /*opacity: 0.75;*/
     color: #fff;
 
@@ -245,11 +245,11 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0
     font-style: italic;
 }
 
-.h2 {
+.masthead_cap .h2 {
     position: absolute;
-    bottom: -75px;
+    bottom: 100px;
 
-    background-color: #155272;
+    background-color: #103E57;
     /*opacity: 0.75;*/
     color: #fff;
     
@@ -292,7 +292,7 @@ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0
 footer {
     padding-top: 25px;
     padding-bottom: 25px;
-    background-color: #155272;
+    background-color: #103E57;
     color: #fff;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
@@ -307,7 +307,7 @@ footer {
 }
 
 .featurebox {
-    background-color: #155272;
+    background-color: #103E57;
     border-radius: 2px;
     padding: 15px;
     color: #fff;
@@ -329,25 +329,18 @@ footer {
     display: inline-block;
 }
 
-.featurebox:hover {
-    opacity: 1;
-}
-
 .featurebox h1 {
+    font-size: 150%;
     margin: 0;
     padding: 0;
-    font-size: x-large;
-    font-weight: 400;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-style: italic;
 }
 
 .featurebox h2 {
-    margin: 0;
-    padding: 0;
-    font-size: larger;
-    font-style: italic;
+    font-size: 125%;
+}
+
+.featurebox:hover {
+    opacity: 1;
 }
 
 .dark {
@@ -381,6 +374,49 @@ margin-top: 30px;
 .icon-th-list {
     display: none;
     content: " ";
+}
+
+.masthead_cap .button1 {
+    position: absolute;
+    bottom: 150px;
+    right: 0;
+    height: 56px;
+    line-height: 55px;
+
+    background-color: #103E57;
+    /*opacity: 0.75;*/
+    color: #fff;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 150%;
+    font-weight: 300;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0px 1px 2px -1px #000;
+    box-shadow: inset 0px 1px 2px -1px #000;
+}
+
+.masthead_cap .button1 a {
+    opacity: 0.5;
+
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
+
+.masthead_cap .button1 a:hover {
+    opacity: 1;
+}
+
+.masthead_cap {
+    position: relative;
+    display: block;
 }
 
 
@@ -507,6 +543,12 @@ margin-top: 30px;
 
     .masthead_cap {
         display: none;
+    }
+
+    .featurebox {
+        margin: 0 auto;
+        margin-bottom: 10px;
+        margin-right: 10px; 
     }
 }
 
