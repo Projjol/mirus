@@ -383,7 +383,7 @@ margin-top: 30px;
     bottom: 150px;
     right: 0;
     height: 56px;
-    line-height: 55px;
+    line-height: 28px;
 
     background-color: #103E57;
     /*opacity: 0.75;*/
@@ -396,12 +396,17 @@ margin-top: 30px;
     font-family: 'Open Sans', sans-serif;
     font-size: 150%;
     font-weight: 300;
-    border-radius: 2px;
-    -webkit-box-shadow: inset 0px 1px 2px -1px #000;
-    box-shadow: inset 0px 1px 2px -1px #000;
 }
 
-.masthead_cap .button1 {
+.masthead_cap .button1 a {
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
+
+.masthead_cap .button1 a {
     opacity: 1;
 
     -webkit-transition: opacity .5s ease;
@@ -411,8 +416,16 @@ margin-top: 30px;
     transition: opacity .5s ease;
 }
 
-.masthead_cap .button1:hover {
+.masthead_cap .button1 a:hover {
     opacity: 0.75;
+}
+
+.button2 {
+    font-style: italic;
+    font-size: small;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 
 .masthead_cap {
