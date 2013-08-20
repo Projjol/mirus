@@ -19,6 +19,8 @@
         <script type="text/javascript">
             window.onload = function () {
                 window.scroll(0, 175);
+
+                var img = document.getElementById("masthead_img");
             };
         </script>
     </head>
@@ -30,7 +32,7 @@
         <div id="mainhead">
             <div class="wrap">
                 <span class="title"><a href="#" class="none">Mirus</a></span>
-
+            
                 <nav id="mainnav">
                     <ul>
                         <li class="current"><a href="#">home</a></li>
@@ -38,6 +40,7 @@
                         <li><a href="#">developer</a></li>
                         <li><a href="#">documentation</a></li>
                         <li><a href="#" class="download">download</a></li>        <!-- icon-download-alt -->
+                        <li class="overflow"><a href="#" class="icon-th-list"> </a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,9 +54,11 @@
 
         <div class="masthead">
         <div class="wrap">
-            <img src="./img/imac.png" class="center" />
-            <span class="h1">So amazing, you'll cry</span>
-            <span class="h2">Give it a whirl today</span>
+            <img src="./img/imac.png" class="center" id="masthead_id" width="95%" />
+            <div class="masthead_cap">
+                <span class="h1">So amazing, you'll cry</span>
+                <span class="h2">Give it a whirl today</span>
+            </div>
         </div>
         </div>
 

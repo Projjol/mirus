@@ -201,7 +201,7 @@ h2 {
     line-height: 32px;
     opacity: 1;
     -webkit-box-shadow: inset 0px 1px 2px -1px #000;
-box-shadow: inset 0px 1px 2px -1px #000;
+    box-shadow: inset 0px 1px 2px -1px #000;
 }
 
 #mainnav a {
@@ -369,7 +369,19 @@ margin-top: 30px;
     padding: 0;
 }
 
+.wrap_s {
+    max-width: 65%;
+    margin: 0 auto;
+}
 
+.overflow {
+    display: none;
+}
+
+.icon-th-list {
+    display: none;
+    content: " ";
+}
 
 
 /* ==========================================================================
@@ -479,8 +491,23 @@ margin-top: 30px;
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 1190px) {
     /* Style adjustments for viewports that meet the condition */
+    #mainnav ul li {
+        display: none;
+    }
+
+    #mainnav ul li.overflow {
+        display: inline-block;
+    }
+
+    .icon-th-list {
+        display: inline-block;
+    }
+
+    .masthead_cap {
+        display: none;
+    }
 }
 
 @media print,
