@@ -1,172 +1,129 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Mirus | Open Source Operating System</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mirus by joshbeitler</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="icon" type="image/png" href="favicon.png">
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/joshbeitler/mirus">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/joshbeitler/mirus/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/joshbeitler/mirus/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script type="text/javascript">
-            window.onload = function () {
-                window.scroll(0, 175);
+    <div class="wrapper">
 
-                var img = document.getElementById("masthead_img");
-            };
-        </script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <div id="mainhead">
-            <div class="wrap">
-                <span class="title"><a href="#" class="none">Mirus</a></span>
-            
-                <nav id="mainnav">
-                    <ul>
-                        <li><a href="#" class="current">home</a></li>
-                        <li><a href="#">learn</a></li>
-                        <li><a href="#">developer</a></li>
-                        <li><a href="#">documentation</a></li>
-                        <li><a href="#" class="download">download</a></li>        <!-- icon-download-alt -->
-                        <li class="overflow"><a href="#" class="icon-th-list"> </a></li>
-                    </ul>
-                </nav>
-            </div>
+      <section>
+        <div id="title">
+          <h1>Mirus</h1>
+          <p>A small operating system written from scratch with the aim of world domination.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
 
-<!--         <div id="masthead">
-            <div class="wrap">
-                derp
-            </div>
-        </div> -->
+        <p>Mirus is a new operating system with the aim of trying out new and interesting things, in hopes to get the best combination possible. We throw all existing ideas and standards out the window (ie: POSIX, Single UNIX Specification) - and try to see what we can do better.</p>
 
-        <div class="masthead">
-        <div class="wrap">
-            <img src="./img/imac.png" class="center" id="masthead_id" width="95%" />
-            <div class="masthead_cap">
-                <span class="h1">So amazing, you'll cry</span>
-                <span class="h2">Give it a whirl today</span>
-                
-                <span class="button1">
-                    <a href="#" class="none">Download</a><br/>
-                    <span class="button2">0.5.2</span>
-                </span>
-            </div>
-        </div>
-        </div>
+<p>Mirus is designed primarily for higher-performance machines, such as workstations and gaming rigs, and to be used by those of higher technical knowledge. We also are trying to implement cluster-based computing and advanced load bearing capabilities.</p>
 
-        <div id="content">
-            <div class="wrap">
-                <h1>Mirus</h1>
-                <p>
-                    Mirus is an operating system designed to be a playground for new and interesting OS theories. It is not based on any other exsisting standards, allowing for a great deal of freedom in the development of the concepts behind it.
-                </p>
-            </div>
+<h3>
+<a name="core-features" class="anchor" href="#core-features"><span class="octicon octicon-link"></span></a>Core Features</h3>
 
-            <section class="dark">
-                <div class="wrap">
-                <h2>Features</h2>
-                <p>
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<ul>
+<li>Powerful executable format</li>
+<li>Dynamic, node based filesystem</li>
+<li>Load bearing and cluster capabilities</li>
+<li>First-party bootloader</li>
+<li>Completely designed for AMD64 architecture</li>
+<li>Forward thinking design</li>
+<li>Resiliant driver framework</li>
+<li>Fast and lean microkernel</li>
+<li>Typical OS stuff (gdt, idt, etc.)</li>
+</ul><p>Please note that not all of these features are implimented yet.</p>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<h3>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h3>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<p>We do not have bleeding-edge ISO images avalible currently.  In order to test drive Mirus, you will need to build it from the source - which is a relatively painless task.  You will want to clone and build the git tree from the <code>master</code> branch.  Full build instructions are found in the <code>support/building.text</code> file.</p>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<p>A build of Mirus with no additional configuration or specified tasks will generate a bootable <code>mirus.iso</code> in the <code>build</code> directory.  You can burn this to any bootable medium you see fit, or run it in a virtual machine via <code>rake qemu</code>. </p>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<h3>
+<a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h3>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<p>You can run the following commands to configure and build the system:</p>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<pre><code>rake configure
+rake
+</code></pre>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
 
-                    <div class="featurebox">
-                        <h1>My Feature #1</h1>
-                        <h2>Its Awesome</h2>
-                    </div>
+<p>To build Mirus, you will need to meet the following dependencies.  If you are not sure whether they are installed on your system, <code>rake</code> will notify you on build.</p>
 
-                    <div class="featurebox">
-                        <h1>More</h1>
-                        <h2>See all features</h2>
-                    </div>
-                </p>
-                </div>
-            </section>
+<ul>
+<li><code>rake</code></li>
+<li><code>ruby</code></li>
+<li>
+<code>clang</code> &gt;= 3.3</li>
+<li><code>ld</code></li>
+<li><code>grub2</code></li>
+<li><code>yasm</code></li>
+<li>
+<code>xorriso</code> &gt;= 1.2.9</li>
+</ul><h3>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
 
-            <section class="wrap">
-                <h2>Media</h2>
-                <p>
-                    *media here*
-                </p>
+<p>If you'd like to contribute, we would love you to go ahead.  Grab yourself a copy of the source, and get up close and personal with it.  It doesn't bite - trust us!  Make your changes on a seperate fork and send a pull request our way.  See the <code>CONTRIBUTING.md</code> file for more details.</p>
 
-                <h2>News</h2>
-                <p>
-                    *news here*
-                </p>
-            </section>
-        </div>
+<h3>
+<a name="issue-tracker" class="anchor" href="#issue-tracker"><span class="octicon octicon-link"></span></a>Issue Tracker</h3>
 
-        <footer>
-            <div class="wrap">
-                Copyright 2012 - Mirus Project<br />
-                <a href="#" class="none">GitHub</a> | <a href="#" class="none">Privacy</a> | <a href="#" class="none">License</a><br /><br />
+<p>If you run into issues (which we almost garentee you will), please post them on the <a href="https://github.com/joshbeitler/mirus/issues">issue tracker</a>.  Please tag and describe your issue in detail, and if any error codes are provided please include them.</p>
 
-                <a href="http://www.w3.org/html/logo/" class="fade">
-                    <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-multimedia-semantics.png" height="32" alt="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics">
-                </a>
-            </div>
-        </footer>
+<h3>
+<a name="getting-help" class="anchor" href="#getting-help"><span class="octicon octicon-link"></span></a>Getting Help</h3>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+<p>We are active on Twitter at <a href="http://twitter.com/mirusproject">@mirusproject</a>, as well as the IRC channel <code>#mirus</code> on <code>irc.freenode.net</code>.  The <a href="https://github.com/joshbeitler/mirus/wiki">wiki</a> is an excellent place to look if you need a quick reference of Mirus.</p>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <!-- <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script> -->
-    </body>
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
+
+<pre><code>Copyright 2013 Joshua Beitler
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
 </html>
