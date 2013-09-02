@@ -4,41 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Mirus by joshbeitler</title>
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/joshbeitler/mirus">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/joshbeitler/mirus/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/joshbeitler/mirus/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
-
     <div class="wrapper">
+      <header>
+        <h1>Mirus</h1>
+        <p>A small operating system written from scratch with the aim of world domination.</p>
 
+        <p class="view"><a href="https://github.com/joshbeitler/mirus">View the Project on GitHub <small>joshbeitler/mirus</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/joshbeitler/mirus/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/joshbeitler/mirus/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/joshbeitler/mirus">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
       <section>
-        <div id="title">
-          <h1>Mirus</h1>
-          <p>A small operating system written from scratch with the aim of world domination.</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+        <p><img src="http://i.imgur.com/Ob9C68n.png" width="15%"></p>
 
-        <p>Mirus is a new operating system with the aim of trying out new and interesting things, in hopes to get the best combination possible. We throw all existing ideas and standards out the window (ie: POSIX, Single UNIX Specification) - and try to see what we can do better.</p>
+<p>Mirus is a new operating system with the aim of trying out new and interesting things, in hopes to get the best combination possible. We throw all existing ideas and standards out the window (ie: POSIX, Single UNIX Specification) - and try to see what we can do better.</p>
 
 <p>Mirus is designed primarily for higher-performance machines, such as workstations and gaming rigs, and to be used by those of higher technical knowledge. We also are trying to implement cluster-based computing and advanced load bearing capabilities.</p>
 
@@ -48,47 +40,15 @@
 <ul>
 <li>Powerful executable format</li>
 <li>Dynamic, node based filesystem</li>
-<li>Load bearing and cluster capabilities</li>
-<li>First-party bootloader</li>
+<li>Homegrown bootloader</li>
 <li>Completely designed for AMD64 architecture</li>
 <li>Forward thinking design</li>
 <li>Resiliant driver framework</li>
 <li>Fast and lean microkernel</li>
 <li>Typical OS stuff (gdt, idt, etc.)</li>
-</ul><p>Please note that not all of these features are implimented yet.</p>
+</ul><p>Please note that not all of these features are implemented yet.</p>
 
 <h3>
-<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h3>
-
-<p>We do not have bleeding-edge ISO images avalible currently.  In order to test drive Mirus, you will need to build it from the source - which is a relatively painless task.  You will want to clone and build the git tree from the <code>master</code> branch.  Full build instructions are found in the <code>support/building.text</code> file.</p>
-
-<p>A build of Mirus with no additional configuration or specified tasks will generate a bootable <code>mirus.iso</code> in the <code>build</code> directory.  You can burn this to any bootable medium you see fit, or run it in a virtual machine via <code>rake qemu</code>. </p>
-
-<h3>
-<a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h3>
-
-<p>You can run the following commands to configure and build the system:</p>
-
-<pre><code>rake configure
-rake
-</code></pre>
-
-<h3>
-<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
-
-<p>To build Mirus, you will need to meet the following dependencies.  If you are not sure whether they are installed on your system, <code>rake</code> will notify you on build.</p>
-
-<ul>
-<li><code>rake</code></li>
-<li><code>ruby</code></li>
-<li>
-<code>clang</code> &gt;= 3.3</li>
-<li><code>ld</code></li>
-<li><code>grub2</code></li>
-<li><code>yasm</code></li>
-<li>
-<code>xorriso</code> &gt;= 1.2.9</li>
-</ul><h3>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
 
 <p>If you'd like to contribute, we would love you to go ahead.  Grab yourself a copy of the source, and get up close and personal with it.  It doesn't bite - trust us!  Make your changes on a seperate fork and send a pull request our way.  See the <code>CONTRIBUTING.md</code> file for more details.</p>
@@ -104,6 +64,12 @@ rake
 <p>We are active on Twitter at <a href="http://twitter.com/mirusproject">@mirusproject</a>, as well as the IRC channel <code>#mirus</code> on <code>irc.freenode.net</code>.  The <a href="https://github.com/joshbeitler/mirus/wiki">wiki</a> is an excellent place to look if you need a quick reference of Mirus.</p>
 
 <h3>
+<a name="project-links" class="anchor" href="#project-links"><span class="octicon octicon-link"></span></a>Project Links</h3>
+
+<ul>
+<li><a href="https://travis-ci.org/">Build status</a></li>
+<li><a href="https://www.ohloh.net/p/mirus">Ohloh</a></li>
+</ul><h3>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
 
 <pre><code>Copyright 2013 Joshua Beitler
@@ -121,9 +87,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 </code></pre>
       </section>
-
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
