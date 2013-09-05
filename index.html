@@ -1,98 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Mirus by joshbeitler</title>
+<head>
+    <title>Mirus | Open Source Operating System</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Mirus</h1>
-        <p>A small operating system written from scratch with the aim of world domination.</p>
+    <link rel="stylesheet" type="text/css" href="scss/master.css">
+    <link rel="stylesheet" type="text/css" href="css/mfglabs_iconset.css">
 
-        <p class="view"><a href="https://github.com/joshbeitler/mirus">View the Project on GitHub <small>joshbeitler/mirus</small></a></p>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/modernizer.js"></script>
+</head>
+<body>
+    <header id="main_head" class="pad">
+        <div class="wrap">
+        <img class="logo" src="img/logo-w.png" />
+            <nav id="main_nav">
+                <ul>
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#"><i class="icon-git"></i></a></li>
+                    <li><a href="#" class="download">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <a href="#main_ct_jump" class="none page_down scroll ct1">
+        <i class="icon-chevron_down"></i>
+    </a>
 
+    <section id="main_content" class="wrap">
+        <div id="masthead" class="center">
+            <h1>mirus</h1>
+            <h2>its simply fabulous</h2>
+        </div>
+    </section>
+    <section>
+        <div class="wrap">
+            <br />
+            <a id="main_ct_jump"></a>
+            <h1>Self-described "operating system&trade;"</h1>
+            <p>
+              Mirus is a next-generation breed of operating system built on new ideas and designs. It aims to break away from the norm and create something special.
+            </p>
 
-        <ul>
-          <li><a href="https://github.com/joshbeitler/mirus/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/joshbeitler/mirus/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/joshbeitler/mirus">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <p><img src="http://i.imgur.com/Ob9C68n.png" width="15%"></p>
+            <p>
+              Mirus is designed primarily for higher-performance machines, such as workstations and gaming rigs, and to be used by those of higher technical knowledge. We also are trying to implement cluster-based computing and advanced load bearing capabilities.
+            </p>
+        </div>
+    </section>
+    <section class="wrap section">
+      <i class="icon-math lefty"></i> <h2>Features</h2>
+      <ul>
+        <li>Powerful and stable hybrid kernel architecture</li>
+        <li>Smart load bearing</li>
+        <li>Cluster computing facilities baked in</li>
+        <li>Designed for modern hardware</li>
+        <li>Forward thinking design</li>
+        <li>Resiliant driver framework</li>
+      </ul>
+    </section>
+    <section class="wrap section">
+      <i class="icon-download lefty"></i><h2>Download</h2>
+      <p>
+        We do not have bleeding-edge ISO images available currently. In order to test drive Mirus, you will need to build it from the source - which is a relatively painless task. You will want to clone and build the git tree from the master branch. Full build instructions are found in the <a href="#">build instructions</a> file.
+      </p>
+      <p>
+        Grab the source and perform a simple build with the following commands:
+        <code>
+          git clone https://github.com/joshbeitler/mirus.git<br />
+          git submodule update<br />
+          rake
+        </code>
+        The resulting ISO image will be contained in the <i>build</i> directory, and is bootable.  You can run it in your favorite virtual machines, burn it to a stick or disk, or run over a network.
+      </p>
+    </section>
+    <section class="wrap section">
+      <i class="icon-users lefty"></i><h2>Contribute</h2>
+      <p>
+        Mirus is open source and community driven.  Any and all are welcome to contribute pieces of source code to be included in the project.  Ideas, art, and publicity are all welcome.  See our <a href="#">contributing guidelines</a> and <a href="#">contributing FAQ</a> for more information on how you can help shape the future of Mirus.
+      </p>
+    </section>
+    <section class="wrap section">
+      <i class="icon-black_question lefty"></i><h2>Get Support</h2>
+      <p>
+        If you run into issues (which we almost guarantee you will), please post them on the <a href="#">issue tracker</a> Please tag and describe your issue in detail, and if any error codes are provided please include them.
+      </p>
+      <p>
+        We are active on Twitter at <a href="#">@mirusproject</a>, as well as the IRC channel #mirus on irc.freenode.net. The <a href="#">wiki</a> is an excellent place to look if you need a quick reference of Mirus.
+      </p>
+    </section>
+    <footer id="main_footer">
+      <div class="wrap">
+        Copyright 2013, Mirus Project<br />
+        Licensed under the Apache License, version 2<br /><br />
+        <a href="http://www.w3.org/html/logo/">
+          <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-multimedia-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics">
+        </a>
+      </div>
+    </footer>
 
-<p>Mirus is a new operating system with the aim of trying out new and interesting things, in hopes to get the best combination possible. We throw all existing ideas and standards out the window (ie: POSIX, Single UNIX Specification) - and try to see what we can do better.</p>
-
-<p>Mirus is designed primarily for higher-performance machines, such as workstations and gaming rigs, and to be used by those of higher technical knowledge. We also are trying to implement cluster-based computing and advanced load bearing capabilities.</p>
-
-<h3>
-<a name="core-features" class="anchor" href="#core-features"><span class="octicon octicon-link"></span></a>Core Features</h3>
-
-<ul>
-<li>Powerful executable format</li>
-<li>Dynamic, node based filesystem</li>
-<li>Homegrown bootloader</li>
-<li>Completely designed for AMD64 architecture</li>
-<li>Forward thinking design</li>
-<li>Resiliant driver framework</li>
-<li>Fast and lean microkernel</li>
-<li>Typical OS stuff (gdt, idt, etc.)</li>
-</ul><p>Please note that not all of these features are implemented yet.</p>
-
-<h3>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
-
-<p>If you'd like to contribute, we would love you to go ahead.  Grab yourself a copy of the source, and get up close and personal with it.  It doesn't bite - trust us!  Make your changes on a seperate fork and send a pull request our way.  See the <code>CONTRIBUTING.md</code> file for more details.</p>
-
-<h3>
-<a name="issue-tracker" class="anchor" href="#issue-tracker"><span class="octicon octicon-link"></span></a>Issue Tracker</h3>
-
-<p>If you run into issues (which we almost garentee you will), please post them on the <a href="https://github.com/joshbeitler/mirus/issues">issue tracker</a>.  Please tag and describe your issue in detail, and if any error codes are provided please include them.</p>
-
-<h3>
-<a name="getting-help" class="anchor" href="#getting-help"><span class="octicon octicon-link"></span></a>Getting Help</h3>
-
-<p>We are active on Twitter at <a href="http://twitter.com/mirusproject">@mirusproject</a>, as well as the IRC channel <code>#mirus</code> on <code>irc.freenode.net</code>.  The <a href="https://github.com/joshbeitler/mirus/wiki">wiki</a> is an excellent place to look if you need a quick reference of Mirus.</p>
-
-<h3>
-<a name="project-links" class="anchor" href="#project-links"><span class="octicon octicon-link"></span></a>Project Links</h3>
-
-<ul>
-<li><a href="https://travis-ci.org/">Build status</a></li>
-<li><a href="https://www.ohloh.net/p/mirus">Ohloh</a></li>
-</ul><h3>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
-
-<pre><code>Copyright 2013 Joshua Beitler
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-</code></pre>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+    <!-- scripts -->
+    <script type="text/javascript">
+        $(".scroll").click(function(event){
+             event.preventDefault();
+             //calculate destination place
+             var dest=0;
+             if($(this.hash).offset().top > $(document).height()-$(window).height()){
+                  dest=$(document).height()-$(window).height();
+             }else{
+                  dest=$(this.hash).offset().top;
+             }
+             //go to destination
+             $('html,body').animate({scrollTop:dest}, 500,'swing');
+         });
+    </script>
+</body>
 </html>
