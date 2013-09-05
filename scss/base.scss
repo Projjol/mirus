@@ -1,6 +1,5 @@
 // imports
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300,600");
-
 @import url("http://fonts.googleapis.com/css?family=Holtwood+One+SC");
 
 // define all the variables we need
@@ -26,11 +25,11 @@ p {
 html {
     color: #444;
     font-family: "Open Sans", sans-serif;
-    font-size: 14pt;    
+    font-size: 14pt;
 }
 
 body {
-    background-color: darken($master-color,5%);
+    background-color: darken($master-color, 5%);
     color: #fff;
 }
 
@@ -213,7 +212,7 @@ h2 {
 }
 
 .section {
-    margin: 35px 0;
+    margin-bottom: 65px;
 }
 
 // dark
@@ -225,53 +224,54 @@ h2 {
 
 // etc
 .lefty {
-  margin-left: -35px;
-  display: inline-block;
-  margin-right: 12px;
+    margin-left: -35px;
+    display: inline-block;
+    margin-right: 12px;
 }
 
 code {
-  display: block;
-  margin: 15px 0;
-  background-color: #0f64be;    // TODO: sassify
-  padding: 15px;
-  border-radius: 3px;   // TODO: sassify
+    display: block;
+    margin: 15px 0;
+    background-color: darken($master-color, 25%);
+    padding: 15px;
+    border-radius: 3px;
 }
 
 h2 {
-  display: inline-block;
+    display: inline-block;
 }
 
 // links
 a:link {
-  text-decoration: none;
-  color: #fff;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  transition: opacity 0.2s; }
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    transition: opacity 0.2s;
 }
 
 a:active {
-  color: #fff;
-  opacity: 1;
+    color: #fff;
+    opacity: 1;
 }
 
 a:visited {
-  text-decoration: none;
-  color: #fff;
-  opacity: 0.5;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
 }
 
 a:hover {
-  color: #fff;
-  opacity: 1;
+    color: #fff;
+    opacity: 1;
 }
 
 footer {
-  background-color: #0f64be;
-  padding: 35px 0;
-  font-size: small;
+    background-color: darken($master-color, 5%);
+    padding: 35px 0;
+    // font-size: small;
+    text-align: center;
 }
