@@ -176,7 +176,8 @@ code {
   margin: 15px 0;
   background-color: #083260;
   padding: 15px;
-  border-radius: 3px; }
+  border-radius: 3px; 
+  font-family: monospace;}
 
 h2 {
   display: inline-block; }
