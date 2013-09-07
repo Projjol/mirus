@@ -33,6 +33,7 @@ html {
 body {
     background-color: darken($master-color, 5%);
     color: #fff;
+    text-align: justify;
 }
 
 .pad {
@@ -241,8 +242,12 @@ code {
     background-color: darken($master-color, 25%);
     padding: 15px;
     border-radius: 3px;
+<<<<<<< HEAD
     font-family: 'Inconsolata', sans-serif;
     font-weight: bold;
+=======
+    font-family: monospace;
+>>>>>>> f6fc0b8e8e6b607b99c19ac83728dd88d9a1dd77
 }
 
 h2 {
