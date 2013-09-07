@@ -1,6 +1,8 @@
 // imports
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300,600");
-@import url("http://fonts.googleapis.com/css?family=Holtwood+One+SC");
+// @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300,600");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
+@import url("http://fonts.googleapis.com/css?family=Inconsolata:400,700");
+@import url("http://fonts.googleapis.com/css?family=Oswald");
 
 // define all the variables we need
 $master-color: #1170d6;
@@ -24,7 +26,7 @@ p {
 
 html {
     color: #444;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;font-family: 'Source Sans Pro', sans-serif;
     font-size: 14pt;
 }
 
@@ -58,11 +60,15 @@ body {
 h1 {
     font-weight: normal;
     font-size: 150%;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
 }
 
 h2 {
     font-weight: normal;
     font-size: 125%;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
 }
 
 // various link styles
@@ -201,7 +207,7 @@ a.none {
 // main
 #main_content {
     padding-top: 80px;
-}
+}@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 h1 {
     margin-bottom: 15px;
@@ -235,6 +241,8 @@ code {
     background-color: darken($master-color, 25%);
     padding: 15px;
     border-radius: 3px;
+    font-family: 'Inconsolata', sans-serif;
+    font-weight: bold;
 }
 
 h2 {
