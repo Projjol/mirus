@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
+@import url("http://fonts.googleapis.com/css?family=Gudea:400,700,400italic");
 @import url("http://fonts.googleapis.com/css?family=Inconsolata:400,700");
 @import url("http://fonts.googleapis.com/css?family=Oswald");
 @import url(http://fonts.googleapis.com/css?family=Oswald);
@@ -14,13 +14,13 @@ p {
 
 html {
   color: #444;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 14pt; }
+  font-family: 'Gudea', sans-serif;
+  font-size: 14pt;
+  font-weight: 300; }
 
 body {
-  background-color: #0f64be;
-  color: #fff;
+  background-color: #f2f2f2;
+  color: black;
   text-align: justify; }
 
 .pad {
@@ -28,11 +28,11 @@ body {
 
 ::selection {
   background-color: #D61174;
-  color: #fff; }
+  color: black; }
 
 ::-moz-selection {
   background-color: #D61174;
-  color: #fff; }
+  color: black; }
 
 .wrap {
   margin: 0 auto;
@@ -51,11 +51,11 @@ h2 {
   text-transform: uppercase; }
 
 a.none {
-  color: #fff;
+  color: black;
   text-decoration: none; }
 
 #main_head {
-  background-color: #0f64be;
+  background-color: #f2f2f2;
   padding: 45px 0; }
 
 .logo {
@@ -91,7 +91,7 @@ a.none {
   opacity: 1; }
 
 #main_nav ul li a.download {
-  background-color: #083260;
+  background-color: #bfbfbf;
   padding: 15px;
   border-radius: 3px; }
 
@@ -116,14 +116,14 @@ a.none {
   margin: 0 auto;
   text-align: center;
   line-height: 40px;
-  color: #fff;
+  color: black;
   margin-bottom: -35px; }
 
 .page_down:hover {
   opacity: 0.75; }
 
 #masthead {
-  color: #fff;
+  color: black;
   text-align: center;
   margin-bottom: 80px;
   padding-top: 170px;
@@ -145,11 +145,11 @@ a.none {
   #ctbox1 .funbox {
     padding: 25px;
     border-radius: 3px;
-    background-color: #083260;
+    background-color: #bfbfbf;
     width: 250px;
     height: 300px;
     margin-right: 15px;
-    color: #fff;
+    color: black;
     display: inline-block;
     margin-bottom: 80px; }
     #ctbox1 .funbox h1 {
@@ -170,19 +170,19 @@ h2 {
   margin-bottom: 65px; }
 
 .dark {
-  background-color: black;
+  background-color: #262626;
   padding: 35px 0;
-  color: #fff; }
+  color: black; }
 
 .lefty {
-  margin-left: -35px;
+  margin-left: -38px;
   display: inline-block;
   margin-right: 12px; }
 
 code {
   display: block;
   margin: 15px 0;
-  background-color: #083260;
+  background-color: #bfbfbf;
   padding: 15px;
   border-radius: 3px;
   font-family: 'Inconsolata', sans-serif;
@@ -193,7 +193,7 @@ h2 {
 
 a:link {
   text-decoration: none;
-  color: #fff;
+  color: black;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
@@ -202,19 +202,19 @@ a:link {
   transition: opacity 0.2s; }
 
 a:active {
-  color: #fff;
+  color: black;
   opacity: 1; }
 
 a:visited {
   text-decoration: none;
-  color: #fff;
+  color: black;
   opacity: 0.5; }
 
 a:hover {
-  color: #fff;
+  color: black;
   opacity: 1; }
 
 footer {
-  background-color: #0f64be;
+  background-color: #f2f2f2;
   padding: 35px 0;
   text-align: center; }
