@@ -1,68 +1,85 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Mirus by joshbeitler</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Mirus : Powerful hybrid kernel operating system" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mirus</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
 
-        <header>
-          <h1>Mirus</h1>
-          <h2>Powerful hybrid kernel operating system</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/joshbeitler/mirus">View on GitHub</a>
+
+          <h1 id="project_title">Mirus</h1>
+          <h2 id="project_tagline">Powerful hybrid kernel operating system</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/joshbeitler/mirus/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/joshbeitler/mirus/tarball/master">Download this project as a tar.gz file</a>
+            </section>
         </header>
+    </div>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/joshbeitler/mirus/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/joshbeitler/mirus/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/joshbeitler/mirus" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <p>Mirus is a new operating system with the aim of trying out new and interesting things, in hopes to get the best combination possible. We throw all existing ideas and standards out the window (ie: POSIX, Single UNIX Specification) - and try to see what we can do better.</p>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Mirus is a new operating system designed on principles created by Plan 9 from Bell Labs.  Mirus is not a fork or clone of Plan 9, but rather an entirely different operating system that extends the functionality of Plan 9.</p>
 
 <p>Mirus is designed primarily for higher-performance machines, such as workstations and gaming rigs, and to be used by those of higher technical knowledge. We also are trying to implement cluster-based computing and advanced load bearing capabilities.</p>
+
+<p>A key motivation in the creation of Mirus was to bring many of the powerful concepts created in Plan 9 to a more general audience, and to build upon what was started there.</p>
+
+<p>Mirus was designed to be elegant and powerful, allowing for tasks that may seem menial on other systems to become easy and fluid.</p>
 
 <h3>
 <a name="core-features" class="anchor" href="#core-features"><span class="octicon octicon-link"></span></a>Core Features</h3>
 
 <ul>
-<li>Powerful executable format</li>
+<li>Inspired by Plan 9</li>
+<li>Fairly POSIX complient</li>
 <li>Dynamic, node based filesystem</li>
-<li>Homegrown bootloader</li>
-<li>Completely designed for AMD64 architecture</li>
 <li>Forward thinking design</li>
 <li>Resilient driver framework</li>
 <li>Fast and lean microkernel</li>
-<li>Typical OS stuff (gdt, idt, etc.)</li>
-</ul><p>Please note that not all of these features are implemented yet.</p>
-
-<h3>
+</ul><h3>
 <a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h3>
 
 <p>We do not have bleeding-edge ISO images available currently.  In order to test drive Mirus, you will need to build it from the source - which is a relatively painless task.  You will want to clone and build the git tree from the <code>master</code> branch.  Full build instructions are found in the <code>BUILDING.md</code> file.</p>
 
 <p>You can run the following commands to configure and build the system:</p>
 
-<pre><code>rake configure
+<pre><code>git clone https://github.com/joshbeitler/mirus.git --recursive
+cd mirus
+git submodue init
 rake
 </code></pre>
 
-<p>A build of Mirus with no additional configuration or specified tasks will generate a bootable <code>mirus.iso</code> in the <code>build</code> directory.  You can burn this to any bootable medium you see fit, or run it in a virtual machine via <code>rake qemu</code>. See the README.md file for more information.</p>
+<p>A build of Mirus with no additional configuration or specified tasks will generate a bootable <code>mirus.iso</code> in the <code>build</code> directory.  You can burn this to any bootable medium you see fit, or run it in a virtual machine via <code>rake qemu</code>. </p>
 
 <h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>To build Mirus, you will need to meet the following dependencies.  If you are not sure whether they are installed on your system, <code>rake</code> will notify you on build.</p>
+
+<ul>
+<li>
+<code>clang</code> &gt;= 3.3</li>
+<li><code>ld</code></li>
+<li><code>grub2</code></li>
+<li><code>yasm</code></li>
+<li>
+<code>xorriso</code> &gt;= 1.2.9</li>
+<li><code>rake</code></li>
+<li><code>colorize</code></li>
+</ul><h3>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
 
 <p>If you'd like to contribute, we would love you to go ahead.  Grab yourself a copy of the source, and get up close and personal with it.  It doesn't bite - trust us!  Make your changes on a separate fork and send a pull request our way.  See the <code>CONTRIBUTING.md</code> file for more details.</p>
@@ -76,15 +93,18 @@ rake
 <a name="getting-help" class="anchor" href="#getting-help"><span class="octicon octicon-link"></span></a>Getting Help</h3>
 
 <p>We are active on Twitter at <a href="http://twitter.com/mirusproject">@mirusproject</a>, as well as the IRC channel <code>#mirus</code> on <code>irc.freenode.net</code>.  The <a href="https://github.com/joshbeitler/mirus/wiki">wiki</a> is an excellent place to look if you need a quick reference of Mirus.</p>
-        </section>
-
-        <footer>
-          Mirus is maintained by <a href="https://github.com/joshbeitler">joshbeitler</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
+      </section>
     </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mirus maintained by <a href="https://github.com/joshbeitler">joshbeitler</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
