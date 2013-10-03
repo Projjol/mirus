@@ -31,15 +31,19 @@
             <a id="main_ct_jump"></a>
             <h1>Self-described "operating system"</h1>
             <p>
-                Mirus is a next-generation breed of operating system built on new ideas and designs.
-                It aims to break away from the norm and create something special.
+                Mirus is a new operating system designed on principles created by Plan 9 from Bell Labs. Mirus is not a fork or clone of Plan 9, but rather an entirely different operating system that extends the functionality of Plan 9.
             </p>
 
             <p>
-                Mirus is designed primarily for higher-performance machines, such as workstations
-                and gaming rigs, and to be used by those of higher technical knowledge.
-                We also are trying to implement cluster-based computing and advanced
-                load bearing capabilities.
+                Mirus is designed primarily for higher-performance machines, such as workstations and gaming rigs, and to be used by those of higher technical knowledge. We also are trying to implement cluster-based computing and advanced load bearing capabilities.
+            </p>
+
+            <p>
+                A key motivation in the creation of Mirus was to bring many of the powerful concepts created in Plan 9 to a more general audience, and to build upon what was started there.
+            </p>
+
+            <p>
+                Mirus was designed to be elegant and powerful, allowing for tasks that may seem menial on other systems to become easy and fluid.
             </p>
         </div>
     </section>
@@ -47,12 +51,13 @@
         <i class="icon-math lefty"></i> 
         <h2>Features</h2>
         <ul>
-            <li>Powerful and stable hybrid kernel architecture</li>
-            <li>Smart load bearing</li>
-            <li>Cluster computing facilities baked in</li>
+            <li>Powerful, Plan 9 based architecture</li>
+            <li>Farily POSIX compliant</li>
+            <li>Dynamic, node based filesystem</li>
             <li>Designed for modern hardware</li>
             <li>Forward thinking design</li>
             <li>Resiliant driver framework</li>
+            <li>Fast and lean microkernel</li>
         </ul>
     </section>
     <section class="wrap section">
@@ -67,7 +72,9 @@
         <p>
             Grab the source and perform a simple build with the following commands:
             <code>
-                git clone https://github.com/joshbeitler/mirus.git
+                git clone https://github.com/joshbeitler/mirus.git mirus
+                <br />cd mirus
+                <br />git submodule init
                 <br />git submodule update
                 <br />rake
             </code>
