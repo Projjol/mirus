@@ -321,6 +321,31 @@
 		{
 		}
 
+		.github
+		{
+			position: relative;
+			display: inline-block;
+			color: #fff;
+			text-decoration: none;
+			font-weight: 700;
+			border: 0;
+			outline: 0;
+			cursor: pointer;
+			border-radius: 8px;
+			overflow: hidden;
+			background: #B21212;
+			-moz-transition: background-color .2s ease-in-out;
+			-webkit-transition: background-color .2s ease-in-out;
+			-o-transition: background-color .2s ease-in-out;
+			-ms-transition: background-color .2s ease-in-out;
+			transition: background-color .2s ease-in-out;
+		}
+
+			.github:hover
+			{
+				background-color: #FF0000;
+			}
+
 	ul.social
 	{
 		cursor: default;
