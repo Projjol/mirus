@@ -12,43 +12,59 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef _MIRUS_KERNEL_IDT_H_
-#define _MIRUS_KERNEL_IDT_H_
+//
+// idt.hpp - idt implimentation
+//
 
-#include <mem/memory.hpp>
-#include <util/debug.hpp>
+#pragma once
+
+#include <stdafx.hpp>
 
 namespace mirus
 {
-    // defines an entry in our idt
-    class idt_entry
+    namespace cpu
     {
-        public:
-            unsigned short base_lo;
-            unsigned short sel;        // Our kernel segment goes here!
-            unsigned char always0;     // This will ALWAYS be set to 0!
-            unsigned char flags;       // Set using the above table!
-            unsigned short base_hi;
-    } __attribute__ ((__packed__));
+        //
+        // idt_entry - defines an entry in our idt
+        //
+        class idt_entry
+        {
+            public:
+                unsigned short base_lo;
+                unsigned short sel;        // Our kernel segment goes here!
+                unsigned char always0;     // This will ALWAYS be set to 0!
+                unsigned char flags;       // Set using the above table!
+                unsigned short base_hi;
+        } __attribute__ ((__packed__));
 
-    // pointer to our idt
-    class idt_ptr
-    {
-        public:
-            unsigned short limit;
-            unsigned long base;
-    } __attribute__ ((__packed__));
+        //
+        // idt_ptr - pointer to our idt
+        //
+        class idt_ptr
+        {
+            public:
+                unsigned short limit;
+                unsigned long base;
+        } __attribute__ ((__packed__));
 
-    // idt and idt functions
-    class idt
-    {
-        public:
-            // setup an idt entry
-            static void set_gate(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags);
-            
-            // install the idt
-            static void install();
-    };
-}
-
-#endif
+        //
+        // idt and idt functions
+        //
+        class idt
+        {
+            public:
+                //
+                // set_gate - setup an idt entry
+                //
+                static void set_gate(unsigned char num, 
+                    unsigned long base, 
+                    unsigned short sel, 
+                    unsigned char flags);
+                
+                //
+                // install the idt
+                //
+                static void install();
+        };
+    } // !namespace
+} // !namespace

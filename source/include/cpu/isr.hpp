@@ -12,26 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef _MIRUS_KERNEL_ISR_H_
-#define _MIRUS_KERNEL_ISR_H_
+//
+// isr.hpp - isr implimentation
+//
 
-#include <cpu/register.hpp>
+#pragma once
+
+#include <stdafx.hpp>
 #include <cpu/idt.hpp>
-#include <misc/printf.hpp>
-#include <util/debug.hpp>
+#include <cpu/irq.hpp>
+#include <cpu/regs.hpp>
 
 namespace mirus
 {
-    // triggered when a kernel panic happens
-    extern "C" void fault_handler(struct regs *r);
-
-    // isr functions
-    class isr
+    namespace cpu
     {
-        public:
-            // install the isr controller
-            static void install();
-    };
-}
+         // triggered when a kernel panic happens
+        extern "C" void fault_handler(struct regs* r);
 
-#endif
+        // isr functions
+        class isr
+        {
+            public:
+                // install the isr controller
+                static void install();
+
+                static void install_handler(size_t isr, irq_handler_t handler);
+                static void uninstall_handler(size_t isr);
+        };
+    } // !namespace
+} // !namespace

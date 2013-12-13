@@ -12,44 +12,61 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef _MIRUS_KERNEL_CPU_GDT_H_
-#define _MIRUS_KERNEL_CPU_GDT_H_
+//
+// gdt.hpp - gdt implimentation
+//
 
-#include <mem/memory.hpp>
-#include <util/debug.hpp>
+#pragma once
+
+#include <stdafx.hpp>
 
 namespace mirus
 {
-    // defines an entry in the gdt
-    class gdt_entry
+    namespace cpu
     {
-        public:
-            unsigned short limit_low;
-            unsigned short base_low;
-            unsigned char base_middle;
-            unsigned char access;
-            unsigned char granularity;
-            unsigned char base_high;
-    } __attribute__ ((__packed__));
+        //
+        // gdt_entry - defines an entry in the gdt
+        //
+        class gdt_entry
+        {
+            public:
+                unsigned short limit_low;
+                unsigned short base_low;
+                unsigned char base_middle;
+                unsigned char access;
+                unsigned char granularity;
+                unsigned char base_high;
+        } __attribute__ ((__packed__));
 
-    // pointer to our gdt
-    class gdt_ptr
-    {
-        public:
-            unsigned short limit;
-            unsigned long base;
-    } __attribute__ ((__packed__));
+        //
+        // gdt_ptr pointer to our gdt
+        //
+        class gdt_ptr
+        {
+            public:
+                unsigned short limit;
+                unsigned long base;
+        } __attribute__ ((__packed__));
 
-    // our gdt + functions
-    class gdt
-    {
-        public:
-            // setup a new entry
-            static void set_gate(int num, unsigned long base, unsigned long limit, unsigned char access, unsigned char gran);
+        //
+        // gdt - the gdt
+        //
+        class gdt
+        {
+            public:
+                //
+                // setup a new entry
+                //
+                static void set_gate(int num, 
+                    unsigned long base, 
+                    unsigned long limit, 
+                    unsigned char access, 
+                    unsigned char gran);
             
-            // install the gdt
-            static void install();
-    };
-}
-
-#endif
+                //
+                // install the gdt (no shit!)
+                //
+                static void install();
+        };
+    } // !namespace
+} // !namespace

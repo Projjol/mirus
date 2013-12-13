@@ -12,81 +12,85 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//
+// string.cpp - string utils
+//
+
+#include <stdafx.hpp>
 #include <util/string.hpp>
 
-size_t strlen(const char *str)
+namespace mirus
 {
-    size_t ret = 0;
-
-    while (str[ret] != 0)
+    size_t strlen(const char *str)
     {
-        ret++;
+        size_t ret = 0;
+
+        while (str[ret] != 0)
+            ret++;
+
+        return ret;
     }
 
-    return ret;
-}
-
-char *iota(int value)
-{
-    char *rc = 0;
-    char *ptr = 0;
-    char *low = 0;
-
-    rc = ptr;
-
-    // Set '-' for negative decimals.
-    if ( value < 0)
+    char *itoa(int value)
     {
-        *ptr++ = '-';
+        char *rc = 0;
+        char *ptr = 0;
+        char *low = 0;
+
+        rc = ptr;
+
+        // Set '-' for negative decimals.
+        if (value < 0)
+            *ptr++ = '-';
+
+        // Remember where the numbers start.
+        low = ptr;
+
+        // The actual conversion.
+        do
+        {
+            // Modulo is negative for negative value. This trick makes abs() unnecessary.
+            *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz"[35 + value % 10];
+            value /= 10;
+        }
+        while (value);
+
+        // Terminating the string.
+        *ptr-- = '\0';
+
+        // Invert the numbers.
+        while (low < ptr)
+        {
+            char tmp = *low;
+            *low++ = *ptr;
+            *ptr-- = tmp;
+        }
+
+        return rc;
     }
 
-    // Remember where the numbers start.
-    low = ptr;
 
-    // The actual conversion.
-    do
+    char *strpad(char *data, int padlen)
     {
-        // Modulo is negative for negative value. This trick makes abs() unnecessary.
-        *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz"[35 + value % 10];
-        value /= 10;
-    }
-    while (value);
+        unsigned long long int datalen = strlen(data);
+        int subtotal = padlen - datalen;
+        char *ret = data;
 
-    // Terminating the string.
-    *ptr-- = '\0';
+        for (int i = 0; i < subtotal; i++)
+            ret += ' ';
 
-    // Invert the numbers.
-    while (low < ptr)
-    {
-        char tmp = *low;
-        *low++ = *ptr;
-        *ptr-- = tmp;
+        return ret;
     }
 
-    return rc;
-}
-
-char *strpad(char *data, int padlen)
-{
-    size_t datalen = strlen(data);
-    int subtotal = padlen - datalen;
-    char *ret = data;
-
-    for (int i = 0; i < subtotal; i++)
+    char* strcat(char *dest, const char *src)
     {
-        ret += ' ';
+        char *rdest = dest;
+
+        while (*dest)
+            dest++;
+
+        while ((*dest++ = *src++));
+    
+        return rdest;
     }
-
-    return ret;
-}
-
-char * strcat(char *dest, const char *src)
-{
-    char *rdest = dest;
-
-    while (*dest)
-      dest++;
-    while ((*dest++ = *src++))
-      ;
-    return rdest;
-}
+} // !namespace

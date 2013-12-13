@@ -12,66 +12,83 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef _MIRUS_KERNEL_IRQ_H_
-#define _MIRUS_KERNEL_IRQ_H_
+//
+// irq.hpp - IRQ implimentation
+//
 
-#include <cpu/register.hpp>
-#include <core/ioport.hpp>
-#include <cpu/idt.hpp>
-#include <util/debug.hpp>
-
-#define IRQ_OFF { asm volatile ("cli"); }
-#define IRQ_RES { asm volatile ("sti"); }
+#pragma once
 
 namespace mirus
 {
-    // irq handler void - defined in boot.s
-    typedef void (*irq_handler_t) (struct regs *);
-
-    // irq handlers - uses C style linkage to help name mangling
-    extern "C" {
-        void irq0();
-        void irq1();
-        void irq2();
-        void irq3();
-        void irq4();
-        void irq5();
-        void irq6();
-        void irq7();
-        void irq8();
-        void irq9();
-        void irq10();
-        void irq11();
-        void irq12();
-        void irq13();
-        void irq14();
-        void irq15();
-    }
-
-    // irq functions
-    class irq
+    namespace cpu
     {
-        public:
-            // install a handler on an irq
-            static void install_handler(int irq, irq_handler_t handler);
-            
-            // remove a handler on an irq
-            static void uninstall_handler(int irq);
+        //
+        // Defines and IRQ handler
+        //
+        typedef void (*irq_handler_t) (struct regs *);
 
-            // remap IRQs to avoid conflicts
-            static void remap();
+        //
+        // irq handlers - uses C style linkage to help name mangling
+        //
+        extern "C"
+        {
+            void irq0();
+            void irq1();
+            void irq2();
+            void irq3();
+            void irq4();
+            void irq5();
+            void irq6();
+            void irq7();
+            void irq8();
+            void irq9();
+            void irq10();
+            void irq11();
+            void irq12();
+            void irq13();
+            void irq14();
+            void irq15();
+            void irq127();
+        }
 
-            // set IRQ gates
-            static void gates();
+        //
+        // irq functions
+        //
+        class irq
+        {
+            public:
+                //
+                // Set up a listener
+                //
+                static void install_handler(int irq, 
+                    irq_handler_t handler);
+                
+                //
+                // remove a handler on an irq
+                //
+                static void uninstall_handler(int irq);
 
-            // install the irq handler
-            static void install();
+                //
+                // remap IRQs to avoid conflicts
+                //
+                static void remap();
 
-            static void ack(int irq_no);
-    };
+                //
+                // set IRQ gates
+                //
+                static void gates();
 
-    // our irq handler
-    extern "C" void irq_handler(struct regs *r);
-}
+                //
+                // install the irq handler
+                //
+                static void install();
 
-#endif
+                static void ack(int irq_no);
+        };
+
+        //
+        // our irq handler
+        //
+        extern "C" void irq_handler(struct regs* r);
+    } // !namespace
+} // !namespace

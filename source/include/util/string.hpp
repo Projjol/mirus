@@ -12,32 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef _MIRUS_KERNEL_UTIL_STRING_H_
-#define _MIRUS_KERNEL_UTIL_STRING_H_
+//
+// string.hpp - string utils
+//
 
-#include <stddef.h>
-#include <stdint.h>
+#pragma once
 
-#include <mem/memory.hpp>
+#include <stdafx.hpp>
 
-// TODO: add more useful functions
-// TODO: move under mirus namespace
-// TODO: mirus::util
-
-// STR length
-size_t strlen(const char *str);
-
-// iota
-// TODO: supercharge the nooby iota
-char *iota(int value);
-
-// pad
-char* strpad(char* data, int padlen);
-
-// strcpy
-// char* strcpy(char* dest, const char* src);
-
-// strcat
-char* strcat(char* dest, const char* src);
-
-#endif
+namespace mirus
+{
+    size_t strlen(const char* str);
+    char* itoa (int value);
+    char* strpad(char* data, int padlen);
+    char* strcat(char* dest, const char* src);
+    char* strcpy(char* dest, const char* src);
+} // !namespace
