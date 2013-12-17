@@ -65,7 +65,11 @@ namespace mirus
 
         void test_syscalls(int eax)
         {
+<<<<<<< HEAD
             cpu::regs* r;
+=======
+            cpu::regs* r = nullptr;
+>>>>>>> upstream/master
             r->eax = eax;
             r->ebx = 0;
             r->ecx = 0;
@@ -77,7 +81,12 @@ namespace mirus
 
         void init_syscalls()
         {
+<<<<<<< HEAD
             cpu::idt::set_gate(0x7F, (unsigned long)syscall_handler, 0x8, 0xEE);
+=======
+            // cpu::idt::set_gate(0x7F, (unsigned long)syscall_handler, 0x08, 0x8E);
+            cpu::irq::install_handler(0x7F, syscall_handler);
+>>>>>>> upstream/master
         }
     } // !namespace
 } // !namespace

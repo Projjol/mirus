@@ -29,6 +29,10 @@ global irq12
 global irq13
 global irq14
 global irq15
+<<<<<<< HEAD
+=======
+global irq127
+>>>>>>> upstream/master
 
 ; 32: IRQ0
 irq0:
@@ -142,10 +146,24 @@ irq15:
     push byte 47
     jmp irq_common_stub
 
+<<<<<<< HEAD
 extern irq_handler
 
 irq_common_stub:
     pusha
+=======
+; 127: System call vector
+irq127:
+    cli
+    push byte 0
+    push byte 127
+    jmp irq_common_stub
+
+extern irq_handler
+
+irq_common_stub:
+    pushad
+>>>>>>> upstream/master
     push ds
     push es
     push fs
@@ -164,6 +182,10 @@ irq_common_stub:
     pop fs
     pop es
     pop ds
+<<<<<<< HEAD
     popa
+=======
+    popad
+>>>>>>> upstream/master
     add esp, 8
     iret

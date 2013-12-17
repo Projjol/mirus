@@ -15,7 +15,11 @@
 # build assembly
 desc "Build bootstrap + lower level ASM code"
 task :build_asm do
+<<<<<<< HEAD
     puts "[rake] Assembling"
+=======
+    puts "Compiling kernel"
+>>>>>>> upstream/master
     $asm_files.each do |t|
         # replace .asm with .o
         object_file = t.sub(/\.asm$/, '.o')
@@ -23,6 +27,7 @@ task :build_asm do
         # assemble + get status
         sh "#{$assembler} #{$assembler_flags} -o #{object_file} #{t} >>./build/logs/asmlog.log 2>&1" do |ok, res|
             if ! ok
+<<<<<<< HEAD
                 puts "[rake] Could not build #{t}".red
                 $errors = true
             else
@@ -31,4 +36,13 @@ task :build_asm do
         end
     end
     puts
+=======
+                puts "--> #{t} - failed".red
+                $errors = true
+            else
+                puts "--> #{t}"
+            end
+        end
+    end
+>>>>>>> upstream/master
 end

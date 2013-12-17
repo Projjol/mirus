@@ -32,6 +32,7 @@ def meets_deps?
 
     deps.each do |t|
         if ! which t
+<<<<<<< HEAD
             if t == "xorriso"
                 puts "Could not find dependency \"#{t}\"".yellow
                 return true
@@ -39,6 +40,12 @@ def meets_deps?
                 puts "Could not find dependency \"#{t}\"".red
                 return false
             end
+=======
+            puts "-- Looking for #{t} - not found".red
+            return false
+        else
+            puts "-- Looking for #{t} - found"
+>>>>>>> upstream/master
         end
     end
 

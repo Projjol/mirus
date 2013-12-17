@@ -112,7 +112,11 @@ namespace mirus
         //
         extern "C" void irq_handler(struct regs* r)
         {
+<<<<<<< HEAD
             void (*handler)(struct regs* r);       
+=======
+            void (*handler)(struct regs* r);
+>>>>>>> upstream/master
 
             if (r->int_no > 47 || r->int_no < 32)
             {

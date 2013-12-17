@@ -20,12 +20,23 @@
 #include <stdafx.hpp>
 #include <boot/multiboot.hpp>
 #include <boot/ramdisk.hpp>
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 #include <cpu/gdt.hpp>
 #include <cpu/idt.hpp>
 #include <cpu/isr.hpp>
 #include <cpu/irq.hpp>
+#include <system/process/process.hpp>
+#include <system/process/elf.hpp>
+#include <system/process/task.hpp>
+#include <system/syscall.hpp>
+#include <hardware/timer.hpp>
+#include <hardware/serial.hpp>
+#include <hardware/rtc.hpp>
 
+<<<<<<< HEAD
 #include <system/process/process.hpp>
 #include <system/process/elf.hpp>
 #include <system/process/task.hpp>
@@ -36,6 +47,8 @@
 #include <hardware/serial.hpp>
 #include <hardware/rtc.hpp>
 
+=======
+>>>>>>> upstream/master
 namespace mirus
 {
     extern "C" void test_func();
@@ -110,6 +123,7 @@ namespace mirus
 
         // Check for any modules, the only of which should be the ramdisk
         ktrace(trace_level::msg, "Trying to get ramdisk...\n");
+<<<<<<< HEAD
 
         if (mod_count > 0)
         {
@@ -129,6 +143,27 @@ namespace mirus
                     mods->mod_start,
                     mods->mod_end);
 
+=======
+
+        if (mod_count > 0)
+        {
+            kprintf("Loading ramdisk...");
+
+            ktrace(trace_level::msg, 
+                "Modules found: %d\n", 
+                mod_count);
+
+            uint32_t i = 0;
+            for (i = 0, mods = (module_t*)mbd->mods_addr;
+                i < mod_count;
+                i++, mods++)
+            {
+                ktrace(trace_level::none, "==========\n");
+                ktrace(trace_level::msg, "Module found: [%d:%d]\n",
+                    mods->mod_start,
+                    mods->mod_end);
+
+>>>>>>> upstream/master
                 // load the ramdisk
                 boot::parse_tar(mods->mod_start);
                 kprintf("[ OK ]\n");
@@ -148,6 +183,7 @@ namespace mirus
                 "Memory is less than expected minimum\n");
 
         // Install GDT
+<<<<<<< HEAD
         ktrace(trace_level::msg, "Installing GDT...");
         cpu::gdt::install();
         ktrace(trace_level::none, "OK\n");
@@ -176,6 +212,24 @@ namespace mirus
         ktrace(trace_level::msg, "Setting up IRQs...");
         cpu::irq::install();
         ktrace(trace_level::none, "OK\n");
+=======
+        cpu::gdt::install();
+
+        // Install IDT
+        cpu::idt::install();
+
+        // Setup ISRs
+        cpu::isr::install();
+
+        // Setup screen
+        screen::terminal::install();
+
+        // Setup serial ports
+        hardware::serial::install();
+
+        // Setup IRQs
+        cpu::irq::install();
+>>>>>>> upstream/master
 
         // Enable interrupts
         asm volatile("sti");
@@ -197,6 +251,7 @@ namespace mirus
         system::enter_userspace();
         ktrace(trace_level::none, "OK\n");
 
+<<<<<<< HEAD
         // ERROR: causes gpf when either of these happen
         //        possibly (but not likely) a bug in the 
         //        ISR or IRQ code
@@ -205,6 +260,9 @@ namespace mirus
         //        * asm volatile("mov $0x0, %eax\n"
         //          "int $0x80");
 
+=======
+        // Test system calls
+>>>>>>> upstream/master
         asm volatile("mov $0, %eax");
         asm volatile("mov $0, %ebx");
         asm volatile("mov $0, %ecx");
@@ -212,11 +270,18 @@ namespace mirus
         asm volatile("mov $0, %esi");
         asm volatile("mov $0, %edi");
         asm volatile("int $0x7F");
+<<<<<<< HEAD
         // test_func();
 
         // system::test_syscalls(0);
+=======
+>>>>>>> upstream/master
 
         // YOU SHALL NOT PASS!!!!
         while (true);
     }
+<<<<<<< HEAD
 } // !namespace
+=======
+} // !namespace
+>>>>>>> upstream/master

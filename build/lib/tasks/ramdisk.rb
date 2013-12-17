@@ -15,6 +15,7 @@
 # create ramdisk
 desc "Create the ramdisk"
 task :build_ramdisk do
+<<<<<<< HEAD
     puts "[rake] Generating disk image"
     sh "cd ramdisk && tar -cf ../iso/boot/ramdisk.tar * && cd .. 2>&1" do |ok, res|
         if ! ok
@@ -22,6 +23,15 @@ task :build_ramdisk do
             $errors = true
         else
             puts "    --> Creating ramdisk"
+=======
+    puts "Generating disk image"
+    sh "cd ramdisk && tar -cf ../iso/boot/ramdisk.tar * && cd .. 2>&1" do |ok, res|
+        if ! ok
+            puts "--> Could not create ramdisk".red
+            $errors = true
+        else
+            puts "--> Creating ramdisk"
+>>>>>>> upstream/master
         end
     end
 end

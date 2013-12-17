@@ -46,7 +46,11 @@ namespace mirus
     //
     // trace - send a trace message
     //
+<<<<<<< HEAD
     int trace(trace_level level, const char *fmt, ...);
+=======
+    void trace(trace_level level, const char *fmt, ...);
+>>>>>>> upstream/master
 
     //
     // ktrace - kernel tracing (to the debug console)

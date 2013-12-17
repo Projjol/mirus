@@ -14,6 +14,7 @@
 
 # dependencies
 require 'rubygems'
+<<<<<<< HEAD
 
 begin
   require 'colorize'
@@ -29,6 +30,11 @@ if meets_deps? == false
     exit -1
 end
 
+=======
+require './build/lib/colorize'
+require './build/lib/deps'
+
+>>>>>>> upstream/master
 # require all our tasks
 require './build/lib/env'
 require './build/lib/tasks/all'
@@ -42,8 +48,19 @@ require './build/lib/tasks/ramdisk'
 
 directory "./build/logs"
 
+<<<<<<< HEAD
 # default task is to generate an iso image
 task :default => ['make_iso'] do
+=======
+# check for required programs
+if meets_deps? == false
+    puts "Does not meet dependencies, cannot continue.".red
+    exit -1
+end
+
+# default task is to generate an iso image
+task :default => ['make_iso'] do  
+>>>>>>> upstream/master
     if $errors
         puts
         puts "[rake] Errors were generated during the build.  Please review the \"build/*.log\" files for details.".red

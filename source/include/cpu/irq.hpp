@@ -48,6 +48,10 @@ namespace mirus
             void irq13();
             void irq14();
             void irq15();
+<<<<<<< HEAD
+=======
+            void irq127();
+>>>>>>> upstream/master
         }
 
         //

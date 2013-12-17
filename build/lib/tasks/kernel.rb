@@ -15,7 +15,10 @@
 # build kernel
 desc "Build the kernel"
 task :build_kernel do
+<<<<<<< HEAD
     puts "[rake] Building kernel"
+=======
+>>>>>>> upstream/master
     $cpp_files.each do |s|
         # replace .cpp with .o
         object_file = s.sub(/\.cpp$/, '.o')
@@ -23,6 +26,7 @@ task :build_kernel do
         # compile + get status
         sh "#{$compiler} #{$cpp_flags} -MMD -MP -c #{s} -o #{object_file} >>./build/logs/kernel.log 2>&1" do |ok, res|
             if ! ok
+<<<<<<< HEAD
                 puts "    --> #{s}".red
                 $errors = true
             else
@@ -31,4 +35,13 @@ task :build_kernel do
         end
     end
     puts
+=======
+                puts "--> #{s} - failed".red
+                $errors = true
+            else
+                puts "--> #{s}"
+            end
+        end
+    end
+>>>>>>> upstream/master
 end
